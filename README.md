@@ -1,2 +1,3 @@
-# geetopod-client-example-springboot
-geetoPod - Spring Boot Client Example
+![geetoPod - Identiy Solutions](https://github.com/geetopod/geetopod/raw/master/resources/images/geetopod-banner-96.png)
+
+# Spring Boot Client Example
