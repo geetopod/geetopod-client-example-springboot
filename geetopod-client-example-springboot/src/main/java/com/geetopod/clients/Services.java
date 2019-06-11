@@ -10,7 +10,7 @@ public class Services {
 
     private static Services __instance;
     protected Gson _gson = new Gson();
-    protected String _gatewayUrl = "http://gw.ssopod.com";
+    protected String _gatewayUrl = "http://gw.geetopod.com";
     protected boolean _isDebug = false;
     protected SSOSession _session = new SSOSession();
 
@@ -234,6 +234,56 @@ public class Services {
         ValidateSSOTokenResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), ValidateSSOTokenResponse.class);
         return response;
     }
+
+
+    public GetSmsProviderResponse getSmsProvider(GetSmsProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/sms/provider");
+        GetSmsProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), GetSmsProviderResponse.class);
+        return response;
+    }
+
+    public GetSystemSmsProviderResponse getSystemSmsProvider(GetSystemSmsProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/sms/provider/system");
+        GetSystemSmsProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), GetSystemSmsProviderResponse.class);
+        return response;
+    }
+
+    public UpdateSmsProviderResponse updateSmsProvider(UpdateSmsProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/sms/provider/update");
+        UpdateSmsProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), UpdateSmsProviderResponse.class);
+        return response;
+    }
+
+    public UpdateSystemSmsProviderResponse updateSystemSmsProvider(UpdateSystemSmsProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/sms/provider/system/update");
+        UpdateSystemSmsProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), UpdateSystemSmsProviderResponse.class);
+        return response;
+    }
+
+    public GetSmtpProviderResponse getSmtpProvider(GetSmtpProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/smtp/provider");
+        GetSmtpProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), GetSmtpProviderResponse.class);
+        return response;
+    }
+
+    public GetSystemSmtpProviderResponse getSystemSmtpProvider(GetSystemSmtpProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/smtp/provider/system");
+        GetSystemSmtpProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), GetSystemSmtpProviderResponse.class);
+        return response;
+    }
+
+    public UpdateSmtpProviderResponse updateSmtpProvider(UpdateSmtpProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/smtp/provider/update");
+        UpdateSmtpProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), UpdateSmtpProviderResponse.class);
+        return response;
+    }
+
+    public UpdateSystemSmtpProviderResponse updateSystemSmtpProvider(UpdateSystemSmtpProviderRequest request) throws Exception {
+        String postUrl = getUrl("/api/smtp/provider/system/update");
+        UpdateSystemSmtpProviderResponse response = _gson.fromJson(post(postUrl, _gson.toJson(request)), UpdateSystemSmtpProviderResponse.class);
+        return response;
+    }
+
 
     protected String getUrl(String path) {
         return gatewayUrl() + path;
